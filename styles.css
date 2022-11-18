@@ -1,0 +1,22 @@
+form#meny{
+    float:left;
+    border: 1px solid gray;
+    background-color: cornsilk;
+}
+form#menyy{
+    float:left;
+    border: 1px solid gray;
+    background-color: cornsilk;
+}
+
+div#Glisamine{
+    float:left;
+    border: 1px solid gray;
+    background-color: cornsilk;
+}
+
+div#Klisamine{
+    float:left;
+    border: 1px solid gray;
+    background-color: cornsilk;
+}

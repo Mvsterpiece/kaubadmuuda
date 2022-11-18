@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tarpv21@localhost">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.43">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <ServerVersion>10.1.38</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="alexey"/>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="phpmyadmin"/>
+    <schema id="7" parent="1" name="tarpv21">
+      <Current>1</Current>
+    </schema>
+    <schema id="8" parent="1" name="test"/>
+    <schema id="9" parent="1" name="trigger_saiko"/>
+    <table id="10" parent="7" name="kaubad">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="11" parent="7" name="kaubagrupid">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="12" parent="7" name="linnad">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="13" parent="7" name="logs">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="14" parent="7" name="looma">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="15" parent="7" name="loomad">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="16" parent="7" name="maakond">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="17" parent="7" name="tervis">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <column id="18" parent="10" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="19" parent="10" name="nimetus">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="20" parent="10" name="kaubagrupi_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="21" parent="10" name="hind">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="22" parent="10" name="kaubad_ibfk_1">
+      <ColNames>kaubagrupi_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>kaubagrupid</RefTableName>
+    </foreign-key>
+    <index id="23" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="10" name="kaubagrupi_id">
+      <ColNames>kaubagrupi_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="26" parent="11" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="27" parent="11" name="grupinimi">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <index id="28" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="30" parent="12" name="linnID">
+      <AutoIncrement>6</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="31" parent="12" name="linn">
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="32" parent="12" name="maakondID">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="33" parent="12" name="pindala">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="34" parent="12" name="linnad_ibfk_1">
+      <ColNames>maakondID</ColNames>
+      <RefColNames>maakondID</RefColNames>
+      <RefTableName>maakond</RefTableName>
+    </foreign-key>
+    <index id="35" parent="12" name="PRIMARY">
+      <ColNames>linnID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="12" name="linn">
+      <ColNames>linn</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="37" parent="12" name="maakondID">
+      <ColNames>maakondID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="38" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="39" parent="12" name="linn">
+      <UnderlyingIndexName>linn</UnderlyingIndexName>
+    </key>
+    <trigger id="40" parent="12" name="linnaMaakonnaUuendamine">
+      <Definer>root@localhost</Definer>
+      <Events>U</Events>
+      <SourceTextLength>364</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="41" parent="13" name="logsID">
+      <AutoIncrement>8</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="42" parent="13" name="kasutaja">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="43" parent="13" name="kuupaev">
+      <DataType>datetime|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="44" parent="13" name="andmed">
+      <DataType>text|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <index id="45" parent="13" name="PRIMARY">
+      <ColNames>logsID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="47" parent="14" name="loomaID">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="48" parent="14" name="loomatuup">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="49" parent="14" name="nimi">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="50" parent="14" name="vanus">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="51" parent="14" name="tervisID">
+      <DataType>int(11)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="52" parent="14" name="fk_terviseSeisund">
+      <ColNames>tervisID</ColNames>
+      <RefColNames>tervisID</RefColNames>
+      <RefTableName>tervis</RefTableName>
+    </foreign-key>
+    <index id="53" parent="14" name="PRIMARY">
+      <ColNames>loomaID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="54" parent="14" name="fk_terviseSeisund">
+      <ColNames>tervisID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="55" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <trigger id="56" parent="14" name="looma_lisamine">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>255</SourceTextLength>
+      <Turn>after-row</Turn>
+    </trigger>
+    <trigger id="57" parent="14" name="looma_kustutamine">
+      <Definer>root@localhost</Definer>
+      <Events>D</Events>
+      <SourceTextLength>258</SourceTextLength>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="58" parent="15" name="id">
+      <AutoIncrement>20</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="59" parent="15" name="loomaNimi">
+      <DataType>varchar(15)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="60" parent="15" name="vanus">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="61" parent="15" name="pilt">
+      <DataType>text|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="62" parent="15" name="silmadevarv">
+      <DataType>varchar(25)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="63" parent="15" name="loomatuup">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <index id="64" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="15" name="loomaNimi">
+      <ColNames>loomaNimi</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="67" parent="15" name="loomaNimi">
+      <UnderlyingIndexName>loomaNimi</UnderlyingIndexName>
+    </key>
+    <column id="68" parent="16" name="maakondID">
+      <AutoIncrement>5</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="69" parent="16" name="maakond">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <index id="70" parent="16" name="PRIMARY">
+      <ColNames>maakondID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="71" parent="16" name="maakond">
+      <ColNames>maakond</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="73" parent="16" name="maakond">
+      <UnderlyingIndexName>maakond</UnderlyingIndexName>
+    </key>
+    <column id="74" parent="17" name="tervisID">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="75" parent="17" name="terviseSeisund">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <index id="76" parent="17" name="PRIMARY">
+      <ColNames>tervisID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
